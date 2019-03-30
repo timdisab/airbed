@@ -22,6 +22,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @photos = @room.photos
   end
 
   def listing
@@ -44,12 +45,24 @@ class RoomsController < ApplicationController
   end
 
   def update
-    if @room.update(room_params)
+
+    new_params = room_params
+    new_params = room_params.merge(active: true) if is_ready_room
+
+    if @room.update(new_params)
       flash[:notice] = "Saved..."
     else
       flash[:alert] = "Something went wrong..."
     end
     redirect_back(fallback_location: request.referer)
+  end
+
+  # Reservations
+  def preload
+    today = Date.today
+    reservations = @room.reservations.where("start_date >= ? OR end_date >= ?", today, today)
+
+    render json: reservations
   end
 
   private
@@ -60,6 +73,10 @@ class RoomsController < ApplicationController
 
   def is_authorised
     redirect_to root_path, alert: "You don't have permission" unless current_user.id == @room.user_id
+  end
+
+  def is_ready_room
+    !@room.active && !@room.price.blank? && !@room.listing_name.blank? && !@room.photos.blank? && !@room.address.blank?
   end
 
   def room_params
