@@ -1,0 +1,15 @@
+current directory: /Users/tim/code4startup/AirBed/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
+/Users/tim/.rvm/rubies/ruby-2.5.1/bin/ruby -r ./siteconf20190301-1340-we1trw.rb extconf.rb
+creating Makefile
+
+current directory: /Users/tim/code4startup/AirBed/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/tim/code4startup/AirBed/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/tim/code4startup/AirBed/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20190301-1340-qnqs4r

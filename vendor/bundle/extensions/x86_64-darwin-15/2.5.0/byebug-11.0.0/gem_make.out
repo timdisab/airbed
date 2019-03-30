@@ -1,0 +1,19 @@
+current directory: /Users/tim/code4startup/AirBed/vendor/bundle/gems/byebug-11.0.0/ext/byebug
+/Users/tim/.rvm/rubies/ruby-2.5.1/bin/ruby -r ./siteconf20190301-1340-jq7hhy.rb extconf.rb
+creating Makefile
+
+current directory: /Users/tim/code4startup/AirBed/vendor/bundle/gems/byebug-11.0.0/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/tim/code4startup/AirBed/vendor/bundle/gems/byebug-11.0.0/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/tim/code4startup/AirBed/vendor/bundle/gems/byebug-11.0.0/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20190301-1340-oqy2hi/byebug
